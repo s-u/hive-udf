@@ -1,0 +1,10 @@
+
+## to use in hive:
+
+add jar UDFs.jar;
+create temporary function parseUTC as 'com.att.research.HiveUDF.UTCParse';
+create temporary function toSlippy as 'com.att.research.HiveUDF.ToSlippy';
+
+
+## parseUTC(string or timestamp) - supports sub-second, result is a double
+## toSlippy(lat, lon, zoom=19) - returns "x,y" string where x and y is truncated to integer
